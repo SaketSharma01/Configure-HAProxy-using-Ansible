@@ -1,0 +1,6 @@
+---
+# handlers file for Reverse_Proxy
+- name: Restart HAProxy
+  service:
+          name: haproxy
+          state: restarted
