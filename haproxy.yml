@@ -1,0 +1,11 @@
+- name: Configuring httpd server on backend server
+  hosts: myweb
+  roles:
+          - httpd
+
+- name: Configuring HAProxy
+  hosts: lb
+  roles:
+          - Reverse_Proxy
+
+
