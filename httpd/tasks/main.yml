@@ -1,0 +1,17 @@
+  - name: install httpd rpm
+    package: 
+       name: "{{ item }}"
+    loop:
+            - httpd
+            - php
+
+  - name: creating webpage
+    copy:
+          dest: "/var/www/html/index.php"
+          src: index.php
+
+  - name: restarting httpd
+    service:
+          name: httpd
+          state: restarted
+    changed_when: false
